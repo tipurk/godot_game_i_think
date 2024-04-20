@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://v82h6ju7si00"]
+
+[ext_resource type="Script" path="res://scripts/scream.gd" id="1_le0kg"]
+[ext_resource type="Texture2D" uid="uid://bpmwhjarbesr4" path="res://sprites/scream.png" id="2_rssdp"]
+[ext_resource type="VideoStream" path="res://video/scream.ogv" id="3_e1nnx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4tipm"]
+size = Vector2(13, 11)
+
+[node name="StaticBody2D" type="StaticBody2D" groups=["interactble"]]
+script = ExtResource("1_le0kg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(36, 37)
+texture = ExtResource("2_rssdp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(36.5, 37.5)
+shape = SubResource("RectangleShape2D_4tipm")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("3_e1nnx")

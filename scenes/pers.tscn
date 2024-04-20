@@ -1,0 +1,94 @@
+[gd_scene load_steps=16 format=3 uid="uid://c8sk588k2vj2a"]
+
+[ext_resource type="Script" path="res://scripts/pers.gd" id="1_2mxjj"]
+[ext_resource type="PackedScene" uid="uid://bt8dbdvha3agw" path="res://scenes/pmenu.tscn" id="2_14g6s"]
+[ext_resource type="Texture2D" uid="uid://dq7iffj4uprtf" path="res://sprites/pers/pers2.png" id="3_a81h0"]
+[ext_resource type="Texture2D" uid="uid://cpiiwkkyn38fx" path="res://sprites/pers/pers3.png" id="4_51rxj"]
+[ext_resource type="Texture2D" uid="uid://dne3pa8spmbnk" path="res://sprites/pers/pers4.png" id="5_bgbq6"]
+[ext_resource type="Texture2D" uid="uid://8sjyahav77bw" path="res://sprites/pers/pers5.png" id="6_botgk"]
+[ext_resource type="Texture2D" uid="uid://b3b8ogu6bgswg" path="res://sprites/pers/pers6.png" id="7_delcn"]
+[ext_resource type="PackedScene" uid="uid://c36br0eei0qs" path="res://scenes/camera_2d.tscn" id="8_8nlus"]
+[ext_resource type="Texture2D" uid="uid://cgk0816nyefxx" path="res://sprites/pers/pers_pered.png" id="8_jmlko"]
+[ext_resource type="Texture2D" uid="uid://dgee8jhikg34t" path="res://sprites/hat/santahat.png" id="9_4e4tj"]
+[ext_resource type="Texture2D" uid="uid://b5gckbehc25km" path="res://sprites/pers/pers_zad.png" id="9_s68n7"]
+[ext_resource type="Texture2D" uid="uid://drc65jkwnmhld" path="res://sprites/pers/pers_zad1.png" id="10_8ylee"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nfrnu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_a81h0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_51rxj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bgbq6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_botgk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_delcn")
+}],
+"loop": true,
+"name": &"lol",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_jmlko")
+}],
+"loop": true,
+"name": &"pered",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_s68n7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8ylee")
+}],
+"loop": true,
+"name": &"zad",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q0eav"]
+size = Vector2(28, 18)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t4x44"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
+z_index = 1
+position = Vector2(-19, -12)
+script = ExtResource("1_2mxjj")
+
+[node name="pmenu" parent="." instance=ExtResource("2_14g6s")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(32, 32)
+sprite_frames = SubResource("SpriteFrames_nfrnu")
+animation = &"zad"
+frame_progress = 0.779899
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(33, 49)
+shape = SubResource("RectangleShape2D_q0eav")
+
+[node name="Camera2D" parent="." instance=ExtResource("8_8nlus")]
+position = Vector2(34, 34)
+position_smoothing_enabled = true
+
+[node name="Santahat" type="Sprite2D" parent="."]
+position = Vector2(28, 10)
+texture = ExtResource("9_4e4tj")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(35, 51)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(22, -1)
+shape = SubResource("CircleShape2D_t4x44")

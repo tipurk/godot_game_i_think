@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://ddiafyygqbvx2"]
+
+[ext_resource type="Script" path="res://scripts/bidlo.gd" id="1_l8i4h"]
+[ext_resource type="Texture2D" uid="uid://bf7a7ul1nw6i1" path="res://sprites/bidlo.png" id="2_6opuf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4pyja"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6opuf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tu3nx"]
+size = Vector2(23, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8kbj"]
+size = Vector2(24.8276, 21.6667)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_l8i4h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4pyja")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(31.5, 33)
+shape = SubResource("RectangleShape2D_tu3nx")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(31.5, 33)
+scale = Vector2(1.45, 2.4)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(31.5, 33)
+scale = Vector2(1.45, 2.4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.344828, -1.90735e-06)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_o8kbj")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

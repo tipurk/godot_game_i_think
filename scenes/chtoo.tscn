@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cidjnq86s5baj"]
+
+[ext_resource type="Script" path="res://scripts/chtoo.gd" id="1_nu8ft"]
+[ext_resource type="Texture2D" uid="uid://du70yywpqyud" path="res://sprites/chtoo.png" id="2_4dlfs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_072x1"]
+size = Vector2(50, 37)
+
+[node name="StaticBody2D" type="StaticBody2D" groups=["interactble"]]
+script = ExtResource("1_nu8ft")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(32, 32)
+texture = ExtResource("2_4dlfs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(36, 38.5)
+shape = SubResource("RectangleShape2D_072x1")

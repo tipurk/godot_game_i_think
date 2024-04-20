@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=3 uid="uid://ddiafyygqbvx2"]
+
+[ext_resource type="Script" path="res://scripts/bidlo.gd" id="1_l8i4h"]
+[ext_resource type="Texture2D" uid="uid://bf7a7ul1nw6i1" path="res://sprites/bidlo.png" id="2_6opuf"]
+[ext_resource type="PackedScene" uid="uid://cflsl2lfn4kge" path="res://scenes/dialogue.tscn" id="3_7sted"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4pyja"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6opuf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tu3nx"]
+size = Vector2(23, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8kbj"]
+size = Vector2(32.4138, 24.5833)
+
+[sub_resource type="Animation" id="Animation_x13e5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ocdf7"]
+resource_name = "walk"
+length = 1.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5, 0.5),
+"update": 0,
+"values": [0.0, -0.118682, 0.195477, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cfyhn"]
+_data = {
+"RESET": SubResource("Animation_x13e5"),
+"walk": SubResource("Animation_ocdf7")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_l8i4h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4pyja")
+speed_scale = 2.0
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(31.5, 33)
+shape = SubResource("RectangleShape2D_tu3nx")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(31.5, 33)
+scale = Vector2(1.45, 2.4)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(31.5, 33)
+scale = Vector2(1.45, 2.4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.689655, 0.208335)
+shape = SubResource("RectangleShape2D_o8kbj")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Control" parent="." instance=ExtResource("3_7sted")]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cfyhn")
+}
+autoplay = "walk"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="dialogue_finished" from="Control" to="." method="_on_control_dialogue_finished"]

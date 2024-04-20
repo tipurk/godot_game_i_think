@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ofnqoyfdxaik"
+path="res://.godot/imported/то чувство когда.mp3-0c0e0c6ef0d2174ac197fc3e4f9dbbfc.mp3str"
+
+[deps]
+
+source_file="res://audio/то чувство когда.mp3"
+dest_files=["res://.godot/imported/то чувство когда.mp3-0c0e0c6ef0d2174ac197fc3e4f9dbbfc.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

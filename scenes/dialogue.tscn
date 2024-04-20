@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://cflsl2lfn4kge"]
+
+[ext_resource type="Script" path="res://dialog/bidlo_dialogue.gd" id="1_7enag"]
+[ext_resource type="Texture2D" uid="uid://dhyrs8huxdnoi" path="res://dialog/dialog1.png" id="2_c0ht0"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_7enag")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_left = -37.0
+offset_top = -49.0
+offset_right = 98.0
+offset_bottom = -8.0
+texture = ExtResource("2_c0ht0")
+metadata/_edit_group_ = true
+
+[node name="name" type="RichTextLabel" parent="NinePatchRect"]
+clip_contents = false
+layout_mode = 0
+offset_left = 3.0
+offset_top = 2.0
+offset_right = 55.0
+offset_bottom = 26.0
+scale = Vector2(0.5, 0.5)
+text = "name"
+
+[node name="text" type="RichTextLabel" parent="NinePatchRect"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 12.0
+offset_right = 199.0
+offset_bottom = 74.0
+scale = Vector2(0.4, 0.4)
+text = "...
+"
