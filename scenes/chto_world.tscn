@@ -78,4 +78,5 @@ autoplay = true
 max_distance = 1e+13
 
 [node name="StaticBody2D" parent="." instance=ExtResource("5_wc70e")]
+z_index = 1
 position = Vector2(1653, 521)

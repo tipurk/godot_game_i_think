@@ -101,7 +101,6 @@ position = Vector2(467, 226)
 position = Vector2(748, 177)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("2_03bda")]
-z_index = 1
 position = Vector2(-1, 98)
 
 [node name="StaticBody2D3" parent="." instance=ExtResource("6_b4ca7")]
