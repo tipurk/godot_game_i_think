@@ -8,7 +8,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwpej"]
 size = Vector2(61, 56)
 
-[node name="StaticBody2D" type="StaticBody2D" groups=["interactble"]]
+[node name="StaticBody2D" type="StaticBody2D"]
 script = ExtResource("1_gnpvg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

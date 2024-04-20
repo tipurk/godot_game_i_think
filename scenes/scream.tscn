@@ -19,6 +19,7 @@ position = Vector2(36.5, 37.5)
 shape = SubResource("RectangleShape2D_4tipm")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+z_index = 2
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

@@ -1,12 +1,17 @@
-[gd_scene load_steps=16 format=3 uid="uid://c8sk588k2vj2a"]
+[gd_scene load_steps=21 format=3 uid="uid://c8sk588k2vj2a"]
 
 [ext_resource type="Script" path="res://scripts/pers.gd" id="1_2mxjj"]
 [ext_resource type="PackedScene" uid="uid://bt8dbdvha3agw" path="res://scenes/pmenu.tscn" id="2_14g6s"]
 [ext_resource type="Texture2D" uid="uid://dq7iffj4uprtf" path="res://sprites/pers/pers2.png" id="3_a81h0"]
+[ext_resource type="Texture2D" uid="uid://64lqqx0cnhm0" path="res://sprites/pers/pers_beg1.png" id="3_i1bgj"]
+[ext_resource type="Texture2D" uid="uid://cj3nbh6a42kxi" path="res://sprites/pers/pers_beg2.png" id="4_2yqy8"]
 [ext_resource type="Texture2D" uid="uid://cpiiwkkyn38fx" path="res://sprites/pers/pers3.png" id="4_51rxj"]
+[ext_resource type="Texture2D" uid="uid://sw0dssvaomlu" path="res://sprites/pers/pers_beg3.png" id="5_8bu61"]
 [ext_resource type="Texture2D" uid="uid://dne3pa8spmbnk" path="res://sprites/pers/pers4.png" id="5_bgbq6"]
 [ext_resource type="Texture2D" uid="uid://8sjyahav77bw" path="res://sprites/pers/pers5.png" id="6_botgk"]
+[ext_resource type="Texture2D" uid="uid://dxp7rcjuunqks" path="res://sprites/pers/pers_beg4.png" id="6_h4tal"]
 [ext_resource type="Texture2D" uid="uid://b3b8ogu6bgswg" path="res://sprites/pers/pers6.png" id="7_delcn"]
+[ext_resource type="Texture2D" uid="uid://bgb6w6unydwu7" path="res://sprites/pers/pers_beg5.png" id="7_ivdrb"]
 [ext_resource type="PackedScene" uid="uid://c36br0eei0qs" path="res://scenes/camera_2d.tscn" id="8_8nlus"]
 [ext_resource type="Texture2D" uid="uid://cgk0816nyefxx" path="res://sprites/pers/pers_pered.png" id="8_jmlko"]
 [ext_resource type="Texture2D" uid="uid://dgee8jhikg34t" path="res://sprites/hat/santahat.png" id="9_4e4tj"]
@@ -15,6 +20,26 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nfrnu"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_i1bgj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2yqy8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8bu61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_h4tal")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ivdrb")
+}],
+"loop": true,
+"name": &"beg",
+"speed": 8.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_a81h0")
@@ -71,8 +96,8 @@ script = ExtResource("1_2mxjj")
 y_sort_enabled = true
 position = Vector2(32, 32)
 sprite_frames = SubResource("SpriteFrames_nfrnu")
-animation = &"zad"
-frame_progress = 0.779899
+animation = &"beg"
+frame_progress = 0.316364
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(33, 49)

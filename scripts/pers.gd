@@ -11,15 +11,16 @@ func get_input():
 	velocity = input_direction * speed
 	if Input.is_action_just_pressed("sprint"):
 		speed *= 2
-		$AnimatedSprite2D
 	if Input.is_action_just_released("sprint"):
 		speed /= 2
 	if !Input.get_vector("left", "right", "up", "down"):
 		$AnimatedSprite2D.play("pered")
 	else:
-		if Input.is_action_pressed("up"):
+		if Input.is_action_pressed("sprint"):
+			$AnimatedSprite2D.play("beg")
+		elif Input.is_action_pressed("up"):
 			$AnimatedSprite2D.play("zad")
-		else:
+		elif !Input.is_action_pressed("up"):
 			$AnimatedSprite2D.play("lol")
 	if Input.is_action_pressed("left"):
 		$AnimatedSprite2D.flip_h = true
