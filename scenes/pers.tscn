@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://c8sk588k2vj2a"]
+[gd_scene load_steps=22 format=3 uid="uid://c8sk588k2vj2a"]
 
 [ext_resource type="Script" path="res://scripts/pers.gd" id="1_2mxjj"]
 [ext_resource type="PackedScene" uid="uid://bt8dbdvha3agw" path="res://scenes/pmenu.tscn" id="2_14g6s"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dgee8jhikg34t" path="res://sprites/hat/santahat.png" id="9_4e4tj"]
 [ext_resource type="Texture2D" uid="uid://b5gckbehc25km" path="res://sprites/pers/pers_zad.png" id="9_s68n7"]
 [ext_resource type="Texture2D" uid="uid://drc65jkwnmhld" path="res://sprites/pers/pers_zad1.png" id="10_8ylee"]
+[ext_resource type="PackedScene" uid="uid://cpp3k1lro766x" path="res://scenes/inventory_gui.tscn" id="18_004qx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nfrnu"]
 animations = [{
@@ -117,3 +118,9 @@ position = Vector2(35, 51)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(22, -1)
 shape = SubResource("CircleShape2D_t4x44")
+
+[node name="InventoryGUI" parent="." instance=ExtResource("18_004qx")]
+offset_left = -526.0
+offset_top = -346.0
+offset_right = -526.0
+offset_bottom = -346.0

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://coxlvl0721bu3"]
+
+[ext_resource type="Texture2D" uid="uid://bwwjid2qydw2u" path="res://sprites/slotsprite.png" id="1_thds4"]
+
+[node name="Panel" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(32, 32)
+offset_right = 32.0
+offset_bottom = 32.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+scale = Vector2(0.32, 0.5)
+texture = ExtResource("1_thds4")
