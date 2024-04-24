@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2uqf5xhknji3"]
+
+[ext_resource type="Script" path="res://scripts/catfunny.gd" id="1_6x40s"]
+[ext_resource type="Texture2D" uid="uid://b1eqo3msn57h2" path="res://sprites/catfunny.png" id="1_75uo0"]
+[ext_resource type="VideoStream" path="res://video/videoplayback.ogv" id="3_ry4rk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12mr7"]
+size = Vector2(57, 60)
+
+[node name="StaticBody2D" type="StaticBody2D" groups=["interactble"]]
+script = ExtResource("1_6x40s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(32, 32)
+texture = ExtResource("1_75uo0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(29.5, 34)
+shape = SubResource("RectangleShape2D_12mr7")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("3_ry4rk")
