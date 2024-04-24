@@ -106,7 +106,6 @@ shape = SubResource("RectangleShape2D_q0eav")
 
 [node name="Camera2D" parent="." instance=ExtResource("8_8nlus")]
 position = Vector2(34, 34)
-position_smoothing_enabled = true
 
 [node name="Santahat" type="Sprite2D" parent="."]
 position = Vector2(28, 10)

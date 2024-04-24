@@ -4,5 +4,9 @@
 
 [node name="Camera2D" type="Camera2D"]
 ignore_rotation = false
+process_callback = 0
 limit_right = 100000000
+limit_smoothed = true
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
 script = ExtResource("1_bpgn2")
