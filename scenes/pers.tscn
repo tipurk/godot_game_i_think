@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://c8sk588k2vj2a"]
+[gd_scene load_steps=23 format=3 uid="uid://c8sk588k2vj2a"]
 
 [ext_resource type="Script" path="res://scripts/pers.gd" id="1_2mxjj"]
+[ext_resource type="Resource" uid="uid://cchx4wst1ui72" path="res://inventory/inventory.tres" id="2_4sue2"]
 [ext_resource type="PackedScene" uid="uid://bt8dbdvha3agw" path="res://scenes/pmenu.tscn" id="2_14g6s"]
 [ext_resource type="Texture2D" uid="uid://dq7iffj4uprtf" path="res://sprites/pers/pers2.png" id="3_a81h0"]
 [ext_resource type="Texture2D" uid="uid://64lqqx0cnhm0" path="res://sprites/pers/pers_beg1.png" id="3_i1bgj"]
@@ -90,6 +91,7 @@ size = Vector2(28, 18)
 z_index = 1
 position = Vector2(-19, -12)
 script = ExtResource("1_2mxjj")
+inv = ExtResource("2_4sue2")
 
 [node name="pmenu" parent="." instance=ExtResource("2_14g6s")]
 

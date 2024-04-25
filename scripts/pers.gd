@@ -4,7 +4,9 @@ class_name Pers
 
 @onready var hat : Sprite2D = $Santahat
 @onready var circle : Area2D = $Area2D
+@export var inv: Inv
 var new_texture = preload("res://sprites/hat/fuckhat.png")
+
 
 func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
@@ -48,3 +50,5 @@ func _physics_process(delta):
 func hat_smenyat():
 	hat.texture = new_texture
 
+func collect(item):
+	inv.insert(item)
