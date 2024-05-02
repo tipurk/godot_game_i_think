@@ -1,5 +1,6 @@
 extends Control
 
+class_name InventoryGUI
 
 @onready var inv: Inv = preload("res://inventory/inventory.tres")
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
@@ -21,6 +22,7 @@ func update_slots():
 func _ready():
 	update_slots()
 	close()
+	Global.invgui = self
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

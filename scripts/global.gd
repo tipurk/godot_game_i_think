@@ -2,6 +2,8 @@ extends Node
 
 var player_y:float;
 var player_x:float;
+var invgui: InventoryGUI;
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

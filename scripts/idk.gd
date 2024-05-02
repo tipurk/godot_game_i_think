@@ -1,7 +1,6 @@
 extends StaticBody2D
 
 @export var item: InvItem
-var pers = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,9 +13,9 @@ func _process(delta):
 
 func interact(pers:Pers):
 	pers.hat_smenyat()
-	playercollect()
+	playercollect(pers)
 	await get_tree().create_timer(0.1).timeout
 	self.queue_free()
 	
-func playercollect():
+func playercollect(pers:Pers):
 	pers.collect(item)

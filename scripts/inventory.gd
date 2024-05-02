@@ -2,11 +2,13 @@ extends Resource
 
 class_name Inv
 
-signal update
-
 @export var items: Array[InvItem]
 
 func insert(item:InvItem):
-	var itemslots = items.filter(func(slot):return slot.item == item)
-	var emptryslots = items.filter(func(slot):return slot.item == null)
-	update.emit()
+	print(item.to_string())
+	for i in range(items.size()):
+		if (!items[i]):
+			items[i] = item
+			Global.invgui.update_slots()
+			return
+
