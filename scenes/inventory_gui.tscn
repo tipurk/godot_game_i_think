@@ -11,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_u313i")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
@@ -35,6 +36,7 @@ columns = 4
 
 [node name="Panel" parent="NinePatchRect/GridContainer" instance=ExtResource("2_u4jfw")]
 layout_mode = 2
+mouse_default_cursor_shape = 2
 
 [node name="Panel2" parent="NinePatchRect/GridContainer" instance=ExtResource("2_u4jfw")]
 layout_mode = 2
