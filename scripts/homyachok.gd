@@ -16,4 +16,3 @@ func interact(pers:Pers):
 	if $VideoStreamPlayer.is_playing():
 		$Sprite2D.hide()
 		$CollisionShape2D.queue_free()
-

@@ -39,11 +39,13 @@ func _input(event):
 	if event.is_action_pressed("left_click"):
 		inventory_update(event.position)
 
+
 func inventory_update(mp):
 	var i: int = 0
 	for slot in slots:
 		var slot_pos = slot.get_screen_position()
 		var mouse_pos = mp
 		if ((mouse_pos.x > slot_pos.x and mouse_pos.x < slot_pos.x + slot.get_rect().size.x) and (mouse_pos.y > slot_pos.y and mouse_pos.y < slot_pos.y + slot.get_rect().size.y)):
-			print(slots)
+			print(slot.get_node("CenterContainer/Panel/item"))
+			get_parent().hat_smenyat(slot.get_node("CenterContainer/Panel/item").texture)
 		i=i+1

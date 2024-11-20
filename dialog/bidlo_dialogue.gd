@@ -43,4 +43,3 @@ func next_script():
 		
 	$NinePatchRect/name.text = dialogue[current_dialogue_id]['name']
 	$NinePatchRect/text.text = dialogue[current_dialogue_id]['text']
-

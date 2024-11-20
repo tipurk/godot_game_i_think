@@ -11,4 +11,3 @@ func insert(item:InvItem):
 			items[i] = item
 			Global.invgui.update_slots()
 			return
-

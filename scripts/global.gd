@@ -18,4 +18,3 @@ func set_player_y(y: float):
 	
 func set_player_x(x: float):
 	player_x=x;
-

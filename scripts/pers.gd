@@ -47,8 +47,9 @@ func _physics_process(delta):
 	move_and_slide()
 	Global.set_player_y(position.y)
 	Global.set_player_x(position.x)
-func hat_smenyat():
-	hat.texture = new_texture
+
+func hat_smenyat(tex):
+	hat.texture = tex
 
 func collect(item):
 	inv.insert(item)
