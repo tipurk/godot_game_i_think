@@ -38,5 +38,14 @@ func _on_button_3_pressed():
 
 
 func _on_button_4_pressed() -> void:
-	get_tree().paused = false
-	get_tree().change_scene_to_file("res://scenes/options.tscn")
+	$VBoxContainer.visible = false
+	$VBoxContainer2.visible = true
+
+
+func _on_h_slider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), value)
+
+
+func _on_button_5_pressed() -> void:
+	$VBoxContainer.visible = true
+	$VBoxContainer2.visible = false

@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://c1pprnsv1h1bu"]
+[gd_scene load_steps=15 format=3 uid="uid://c1pprnsv1h1bu"]
 
 [ext_resource type="PackedScene" uid="uid://b0geuubt2guvd" path="res://scenes/oiiaioooooiai_fin.tscn" id="1_hlcjk"]
 [ext_resource type="Script" path="res://camera_3d.gd" id="1_neaxl"]
 [ext_resource type="PackedScene" uid="uid://bt8dbdvha3agw" path="res://scenes/pmenu.tscn" id="2_05m8c"]
+[ext_resource type="Script" path="res://scripts/thiscat.gd" id="3_fpvhq"]
 [ext_resource type="AudioStream" uid="uid://c3i6rrkbcvxy" path="res://audio/worldthiscat.mp3" id="4_u6hxn"]
 
 [sub_resource type="GDScript" id="GDScript_xday3"]
@@ -27,9 +28,16 @@ var grav_vel: Vector3 # Gravity velocity
 var jump_vel: Vector3 # Jumping velocity
 
 @onready var camera: Camera3D = $Camera3D
+@onready var circle : RigidBody3D = $RigidBody3D
 
 func _ready() -> void:
 	capture_mouse()
+func get_input():
+	if Input.is_action_just_pressed(\"chat\"):
+		var bodies = circle.get_overlapping_bodies()
+		for body in bodies:
+			if body.is_in_group(\"interactble\"):
+				body.interact(self)
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -140,9 +148,10 @@ shape = SubResource("BoxShape3D_i2ooe")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_10d5a")
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
+[node name="RigidBody3D" type="RigidBody3D" parent="." groups=["interactble"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.384408, 0)
 collision_layer = 2
+script = ExtResource("3_fpvhq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.142344, 0)

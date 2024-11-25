@@ -7,7 +7,10 @@ class_name Pers
 @export var inv: Inv
 var new_texture = preload("res://sprites/hat/fuckhat.png")
 
-
+func release_mouse() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	
+	
 func get_input():
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed
@@ -42,6 +45,8 @@ func get_input():
 	if Input.is_action_just_pressed("ui_end"):
 		get_tree().paused = true
 		$pmenu.visible = true
+	if Input.is_action_just_pressed("release_mouse"):
+		release_mouse()
 func _physics_process(delta):
 	get_input()
 	move_and_slide()
