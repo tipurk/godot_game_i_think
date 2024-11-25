@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://c1pprnsv1h1bu"]
+[gd_scene load_steps=14 format=3 uid="uid://c1pprnsv1h1bu"]
 
 [ext_resource type="PackedScene" uid="uid://b0geuubt2guvd" path="res://scenes/oiiaioooooiai_fin.tscn" id="1_hlcjk"]
 [ext_resource type="Script" path="res://camera_3d.gd" id="1_neaxl"]
 [ext_resource type="PackedScene" uid="uid://bt8dbdvha3agw" path="res://scenes/pmenu.tscn" id="2_05m8c"]
+[ext_resource type="AudioStream" uid="uid://c3i6rrkbcvxy" path="res://audio/worldthiscat.mp3" id="4_u6hxn"]
 
 [sub_resource type="GDScript" id="GDScript_xday3"]
 script/source = "class_name Player extends CharacterBody3D
@@ -96,6 +97,18 @@ background_color = Color(0.883926, 0.923123, 1, 1)
 [sub_resource type="SphereShape3D" id="SphereShape3D_8pd4c"]
 radius = 0.163
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hdc8x"]
+render_priority = 1
+albedo_color = Color(0.564962, 0.564962, 0.564962, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_1j5we"]
+material = SubResource("StandardMaterial3D_hdc8x")
+text = "В ЭТОЙ ИГРЕ 
+НЕ БУДЕТ КОТЁНКА ПОВОРЁНКА"
+pixel_size = 0.1
+curve_step = 4.6
+depth = 0.897
+
 [node name="Node3D" type="Node3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -136,3 +149,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.142344, 0)
 shape = SubResource("SphereShape3D_8pd4c")
 
 [node name="OiiaioooooiaiFin" parent="RigidBody3D" instance=ExtResource("1_hlcjk")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, -2.97886e-09, -2.26267e-08, -2.26267e-08, 0, -1, 2.97885e-09, 1, -1.97809e-15, 0, 30, 0)
+mesh = SubResource("TextMesh_1j5we")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_u6hxn")
+volume_db = -20.0
+autoplay = true

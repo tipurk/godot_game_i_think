@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4wf5eiod36ew"]
+
+[ext_resource type="Script" path="res://scripts/tptoworldthiscat.gd" id="1_ku8ql"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elsk5"]
+size = Vector2(41, 43)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+script = ExtResource("1_ku8ql")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(46.5, 52.5)
+shape = SubResource("RectangleShape2D_elsk5")
