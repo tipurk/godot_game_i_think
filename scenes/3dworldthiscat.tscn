@@ -1,8 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://c1pprnsv1h1bu"]
+[gd_scene load_steps=16 format=3 uid="uid://c1pprnsv1h1bu"]
 
 [ext_resource type="PackedScene" uid="uid://b0geuubt2guvd" path="res://scenes/oiiaioooooiai_fin.tscn" id="1_hlcjk"]
 [ext_resource type="Script" path="res://camera_3d.gd" id="1_neaxl"]
 [ext_resource type="PackedScene" uid="uid://bt8dbdvha3agw" path="res://scenes/pmenu.tscn" id="2_05m8c"]
+[ext_resource type="Script" path="res://scripts/interact.gd" id="2_pooc5"]
 [ext_resource type="Script" path="res://scripts/thiscat.gd" id="3_fpvhq"]
 [ext_resource type="AudioStream" uid="uid://c3i6rrkbcvxy" path="res://audio/worldthiscat.mp3" id="4_u6hxn"]
 
@@ -32,12 +33,7 @@ var jump_vel: Vector3 # Jumping velocity
 
 func _ready() -> void:
 	capture_mouse()
-func get_input():
-	if Input.is_action_just_pressed(\"chat\"):
-		var bodies = circle.get_overlapping_bodies()
-		for body in bodies:
-			if body.is_in_group(\"interactble\"):
-				body.interact(self)
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -133,6 +129,26 @@ shape = SubResource("CapsuleShape3D_sh76g")
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
 script = ExtResource("1_neaxl")
 
+[node name="interact" type="Node3D" parent="CharacterBody3D/Camera3D"]
+
+[node name="interact" type="RayCast3D" parent="CharacterBody3D/Camera3D/interact"]
+script = ExtResource("2_pooc5")
+
+[node name="interactui" type="Control" parent="CharacterBody3D/Camera3D/interact/interact"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CharacterBody3D/Camera3D/interact/interact/interactui"]
+layout_mode = 0
+offset_left = 535.0
+offset_top = 526.0
+offset_right = 623.0
+offset_bottom = 549.0
+text = "йоуйоуйоу"
+
 [node name="pmenu" parent="CharacterBody3D" instance=ExtResource("2_05m8c")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -152,8 +168,9 @@ environment = SubResource("Environment_10d5a")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.384408, 0)
 collision_layer = 2
 script = ExtResource("3_fpvhq")
+scene_change = "res://scenes"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" groups=["interactble"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.142344, 0)
 shape = SubResource("SphereShape3D_8pd4c")
 

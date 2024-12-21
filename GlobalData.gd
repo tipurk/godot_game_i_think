@@ -3,6 +3,8 @@ class_name GlobalData
 
 static var instance
 var data = "default"
+var loadingScreen = preload("res://scenes/loading_screen.tscn").instantiate()
+
 static func get_instance():
 	if not instance:
 		instance = GlobalData.new()

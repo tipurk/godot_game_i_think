@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 func _input(event):
 	if event is InputEventMouseButton:
-		if Input.is_action_pressed("wheelup"):
-			fov += 1 #Camera
 		if Input.is_action_pressed("wheeldown"):
+			fov += 1 #Camera
+		if Input.is_action_pressed("wheelup"):
 			fov -= 1 #Camera

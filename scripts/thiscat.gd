@@ -1,6 +1,8 @@
 extends RigidBody3D
 
 
+@export_dir var scene_change : String
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -10,5 +12,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func interact(pers:Pers):
-	get_tree().change_scene_to_file("res://scenes/tilemap.tscn")
+func interact():
+	var ls = Global.loadingScreen
+	Global.loadingScreen.change_scene_to = scene_change
+	get_tree().root.add_child(ls)
