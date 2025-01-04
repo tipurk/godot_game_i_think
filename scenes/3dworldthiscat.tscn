@@ -126,22 +126,21 @@ script = SubResource("GDScript_xday3")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 shape = SubResource("CapsuleShape3D_sh76g")
 
+[node name="interact" type="Node3D" parent="CharacterBody3D"]
+
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
 script = ExtResource("1_neaxl")
 
-[node name="interact" type="Node3D" parent="CharacterBody3D/Camera3D"]
-
-[node name="interact" type="RayCast3D" parent="CharacterBody3D/Camera3D/interact"]
+[node name="interact" type="RayCast3D" parent="CharacterBody3D/Camera3D"]
 script = ExtResource("2_pooc5")
 
-[node name="interactui" type="Control" parent="CharacterBody3D/Camera3D/interact/interact"]
-visible = false
+[node name="interactui" type="Control" parent="CharacterBody3D/Camera3D/interact"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="CharacterBody3D/Camera3D/interact/interact/interactui"]
+[node name="Label" type="Label" parent="CharacterBody3D/Camera3D/interact/interactui"]
 layout_mode = 0
 offset_left = 535.0
 offset_top = 526.0
@@ -165,13 +164,13 @@ shape = SubResource("BoxShape3D_i2ooe")
 environment = SubResource("Environment_10d5a")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="." groups=["interactble"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.384408, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.225366, -1.65488)
 collision_layer = 2
 script = ExtResource("3_fpvhq")
 scene_change = "res://scenes"
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" groups=["interactble"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.142344, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.208242, 0)
 shape = SubResource("SphereShape3D_8pd4c")
 
 [node name="OiiaioooooiaiFin" parent="RigidBody3D" instance=ExtResource("1_hlcjk")]
