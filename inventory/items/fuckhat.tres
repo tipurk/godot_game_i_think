@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://ope1vf7i1r6q"]
 
-[ext_resource type="Script" path="res://scripts/inventoryitem.gd" id="1_6423w"]
+[ext_resource type="Script" uid="uid://cxfh5q7w4shd" path="res://scripts/inventoryitem.gd" id="1_6423w"]
 [ext_resource type="Texture2D" uid="uid://cohwis2qgdtqn" path="res://sprites/hat/fuckhat.png" id="2_fmryf"]
 
 [resource]

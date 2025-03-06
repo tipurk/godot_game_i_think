@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://qt65dw6t7k3w"]
 
 [ext_resource type="Texture2D" uid="uid://dpp25h42wcj2b" path="res://sprites/homyachok.png" id="1_3d02w"]
-[ext_resource type="Script" path="res://scripts/homyachok.gd" id="1_gnpvg"]
+[ext_resource type="Script" uid="uid://bo1y6b7k88e41" path="res://scripts/homyachok.gd" id="1_gnpvg"]
 [ext_resource type="AudioStream" uid="uid://mu1wdoto5lba" path="res://audio/vzriv.mp3" id="3_yoi5h"]
-[ext_resource type="VideoStream" path="res://video/Футаж Взрыв на зелёном фоне.ogv" id="4_uu6pq"]
+[ext_resource type="VideoStream" uid="uid://jswmmw06jsl8" path="res://video/Футаж Взрыв на зелёном фоне.ogv" id="4_uu6pq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rwpej"]
 size = Vector2(61, 56)

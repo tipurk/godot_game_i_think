@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Inv" load_steps=4 format=3 uid="uid://cchx4wst1ui72"]
 
-[ext_resource type="Script" path="res://scripts/inventoryitem.gd" id="1_1vr8t"]
-[ext_resource type="Script" path="res://scripts/inventory.gd" id="1_p15m2"]
+[ext_resource type="Script" uid="uid://cxfh5q7w4shd" path="res://scripts/inventoryitem.gd" id="1_1vr8t"]
+[ext_resource type="Script" uid="uid://cja78p8fbdm7k" path="res://scripts/inventory.gd" id="1_p15m2"]
 [ext_resource type="Resource" uid="uid://mbrhy328diy" path="res://inventory/items/santahat.tres" id="2_e0vmg"]
 
 [resource]

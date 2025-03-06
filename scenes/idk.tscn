@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cpcyf83t73mgc"]
 
-[ext_resource type="Script" path="res://scripts/idk.gd" id="1_nhlxj"]
+[ext_resource type="Script" uid="uid://b4oeyv2dmpsq4" path="res://scripts/idk.gd" id="1_nhlxj"]
 [ext_resource type="Texture2D" uid="uid://uv6yy4e1w8bb" path="res://sprites/idk.png" id="1_q1gn4"]
 [ext_resource type="Resource" uid="uid://ope1vf7i1r6q" path="res://inventory/items/fuckhat.tres" id="2_fqipv"]
 

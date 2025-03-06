@@ -13,6 +13,7 @@ func _process(delta: float) -> void:
 	pass
 
 func interact():
-	var ls = Global.loadingScreen
-	Global.loadingScreen.change_scene_to = scene_change
-	get_tree().root.add_child(ls)
+	#var ls = Global.loadingScreen
+	#Global.loadingScreen.change_scene_to = scene_change
+	#get_tree().root.add_child(ls)
+	get_tree().change_scene_to_file("res://scenes/tilemap.tscn")

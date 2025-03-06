@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dlohawbgec20b"]
 
-[ext_resource type="Script" path="res://scripts/loading.gd" id="1_m32kd"]
+[ext_resource type="Script" uid="uid://baysuye5p0l1p" path="res://scripts/loading.gd" id="1_m32kd"]
 
 [sub_resource type="Animation" id="Animation_een7n"]
 length = 0.001
@@ -35,8 +35,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h81pf"]
 _data = {
-"RESET": SubResource("Animation_een7n"),
-"loading": SubResource("Animation_jmy41")
+&"RESET": SubResource("Animation_een7n"),
+&"loading": SubResource("Animation_jmy41")
 }
 
 [node name="loadingScreen" type="Control"]

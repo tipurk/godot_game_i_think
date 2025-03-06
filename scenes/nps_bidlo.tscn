@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://ddiafyygqbvx2"]
 
-[ext_resource type="Script" path="res://scripts/bidlo.gd" id="1_l8i4h"]
+[ext_resource type="Script" uid="uid://b4u3tp2ipupcm" path="res://scripts/bidlo.gd" id="1_l8i4h"]
 [ext_resource type="Texture2D" uid="uid://bf7a7ul1nw6i1" path="res://sprites/bidlo.png" id="2_6opuf"]
 [ext_resource type="PackedScene" uid="uid://cflsl2lfn4kge" path="res://scenes/dialogue.tscn" id="3_7sted"]
 
@@ -55,8 +55,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cfyhn"]
 _data = {
-"RESET": SubResource("Animation_x13e5"),
-"walk": SubResource("Animation_ocdf7")
+&"RESET": SubResource("Animation_x13e5"),
+&"walk": SubResource("Animation_ocdf7")
 }
 
 [node name="CharacterBody2D" type="CharacterBody2D"]

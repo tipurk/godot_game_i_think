@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://v82h6ju7si00"]
 
-[ext_resource type="Script" path="res://scripts/scream.gd" id="1_le0kg"]
+[ext_resource type="Script" uid="uid://dp5cdmro24fby" path="res://scripts/scream.gd" id="1_le0kg"]
 [ext_resource type="Texture2D" uid="uid://bpmwhjarbesr4" path="res://sprites/scream.png" id="2_rssdp"]
-[ext_resource type="VideoStream" path="res://video/scream.ogv" id="3_e1nnx"]
+[ext_resource type="VideoStream" uid="uid://bcifu5uj72e4f" path="res://video/scream.ogv" id="3_e1nnx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4tipm"]
 size = Vector2(13, 11)

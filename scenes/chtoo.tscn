@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cidjnq86s5baj"]
 
-[ext_resource type="Script" path="res://scripts/chtoo.gd" id="1_nu8ft"]
+[ext_resource type="Script" uid="uid://rmiotprcule7" path="res://scripts/chtoo.gd" id="1_nu8ft"]
 [ext_resource type="Texture2D" uid="uid://du70yywpqyud" path="res://sprites/chtoo.png" id="2_4dlfs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_072x1"]

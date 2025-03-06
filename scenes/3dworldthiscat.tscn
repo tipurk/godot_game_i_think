@@ -1,11 +1,11 @@
 [gd_scene load_steps=16 format=3 uid="uid://c1pprnsv1h1bu"]
 
-[ext_resource type="PackedScene" uid="uid://b0geuubt2guvd" path="res://scenes/oiiaioooooiai_fin.tscn" id="1_hlcjk"]
-[ext_resource type="Script" path="res://camera_3d.gd" id="1_neaxl"]
+[ext_resource type="Script" uid="uid://bpi5nb2xt74e8" path="res://camera_3d.gd" id="1_neaxl"]
 [ext_resource type="PackedScene" uid="uid://bt8dbdvha3agw" path="res://scenes/pmenu.tscn" id="2_05m8c"]
-[ext_resource type="Script" path="res://scripts/interact.gd" id="2_pooc5"]
-[ext_resource type="Script" path="res://scripts/thiscat.gd" id="3_fpvhq"]
+[ext_resource type="Script" uid="uid://cyv5ajrj4630w" path="res://scripts/interact.gd" id="2_pooc5"]
+[ext_resource type="Script" uid="uid://bsg8voltde0ey" path="res://scripts/thiscat.gd" id="3_fpvhq"]
 [ext_resource type="AudioStream" uid="uid://c3i6rrkbcvxy" path="res://audio/worldthiscat.mp3" id="4_u6hxn"]
+[ext_resource type="PackedScene" uid="uid://jxvhyfynhw42" path="res://sprites/OiiaioooooiaiFin.fbx" id="5_64dn0"]
 
 [sub_resource type="GDScript" id="GDScript_xday3"]
 script/source = "class_name Player extends CharacterBody3D
@@ -98,9 +98,6 @@ size = Vector3(100, 1, 100)
 background_mode = 1
 background_color = Color(0.883926, 0.923123, 1, 1)
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_8pd4c"]
-radius = 0.163
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hdc8x"]
 render_priority = 1
 albedo_color = Color(0.564962, 0.564962, 0.564962, 1)
@@ -112,6 +109,8 @@ text = "В ЭТОЙ ИГРЕ
 pixel_size = 0.1
 curve_step = 4.6
 depth = 0.897
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_64dn0"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -132,6 +131,7 @@ shape = SubResource("CapsuleShape3D_sh76g")
 script = ExtResource("1_neaxl")
 
 [node name="interact" type="RayCast3D" parent="CharacterBody3D/Camera3D"]
+target_position = Vector3(0, 0, -1.11)
 script = ExtResource("2_pooc5")
 
 [node name="interactui" type="Control" parent="CharacterBody3D/Camera3D/interact"]
@@ -163,18 +163,6 @@ shape = SubResource("BoxShape3D_i2ooe")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_10d5a")
 
-[node name="RigidBody3D" type="RigidBody3D" parent="." groups=["interactble"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.225366, -1.65488)
-collision_layer = 2
-script = ExtResource("3_fpvhq")
-scene_change = "res://scenes"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.208242, 0)
-shape = SubResource("SphereShape3D_8pd4c")
-
-[node name="OiiaioooooiaiFin" parent="RigidBody3D" instance=ExtResource("1_hlcjk")]
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, -2.97886e-09, -2.26267e-08, -2.26267e-08, 0, -1, 2.97885e-09, 1, -1.97809e-15, 0, 30, 0)
 mesh = SubResource("TextMesh_1j5we")
@@ -183,3 +171,19 @@ mesh = SubResource("TextMesh_1j5we")
 stream = ExtResource("4_u6hxn")
 volume_db = -20.0
 autoplay = true
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." groups=["cat"]]
+script = ExtResource("3_fpvhq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(-2.68381e-08, 0, 0.403448, 0, 0.373999, 0, -0.613984, 0, -1.76353e-08, -0.0574009, 0.197553, 0.031939)
+shape = SubResource("SphereShape3D_64dn0")
+
+[node name="OiiaioooooiaiFin" parent="RigidBody3D" instance=ExtResource("5_64dn0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0501941, 0.0100409, 0.0305041)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.548082, 0)
+light_color = Color(0.998763, 0.997611, 2.31028e-06, 1)
+light_energy = 10.374
+omni_range = 37.557

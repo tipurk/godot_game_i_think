@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://b2uqf5xhknji3"]
 
-[ext_resource type="Script" path="res://scripts/catfunny.gd" id="1_6x40s"]
+[ext_resource type="Script" uid="uid://dv81fbe0dikpc" path="res://scripts/catfunny.gd" id="1_6x40s"]
 [ext_resource type="Texture2D" uid="uid://b1eqo3msn57h2" path="res://sprites/catfunny.png" id="1_75uo0"]
-[ext_resource type="VideoStream" path="res://video/videoplayback.ogv" id="3_ry4rk"]
+[ext_resource type="VideoStream" uid="uid://dmlbw0lsdo1c4" path="res://video/videoplayback.ogv" id="3_ry4rk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_12mr7"]
 size = Vector2(57, 60)
